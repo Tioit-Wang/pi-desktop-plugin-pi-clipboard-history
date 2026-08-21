@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "pi.clipboard-history",
-  "name": "Clipboard History",
+  "name": "剪贴板历史",
   "version": "0.1.0",
   "description": "Capture clipboard text while PI-Desktop runs, keep 30 days of history, restore any entry with one click.",
   "i18n": {
     "en": {
-"name": "剪贴板历史",
+      "name": "Clipboard History",
       "description": "Capture clipboard text while PI-Desktop runs, keep 30 days of history, restore any entry with one click.",
       "safetyNotes": "Captures clipboard text locally while PI-Desktop runs and stores it in plain text on disk for up to 30 days. Sensitive content you copy (passwords, tokens) is recorded too — use the pause switch or delete entries to remove it. No data leaves your machine."
     },
