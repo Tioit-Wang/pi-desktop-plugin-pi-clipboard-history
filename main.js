@@ -27,8 +27,8 @@ async function onLoad() {
   await registered;
   await pi.commands.register({
     id: "pi-clipboard-history.open",
-    title: "Clipboard History: Open Panel",
-    keywords: ["clipboard", "剪贴板", "history"],
+    title: "剪贴板历史：打开面板",
+    keywords: ["clipboard", "剪贴板", "剪贴板历史", "history"],
     run: async () => {
       // No title option: the host resolves the localized manifest title.
       await pi.ui.openPanel();

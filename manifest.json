@@ -6,7 +6,7 @@
   "description": "Capture clipboard text while PI-Desktop runs, keep 30 days of history, restore any entry with one click.",
   "i18n": {
     "en": {
-      "name": "Clipboard History",
+"name": "剪贴板历史",
       "description": "Capture clipboard text while PI-Desktop runs, keep 30 days of history, restore any entry with one click.",
       "safetyNotes": "Captures clipboard text locally while PI-Desktop runs and stores it in plain text on disk for up to 30 days. Sensitive content you copy (passwords, tokens) is recorded too — use the pause switch or delete entries to remove it. No data leaves your machine."
     },
@@ -34,8 +34,8 @@
     "commands": [
       {
         "id": "pi-clipboard-history.open",
-        "title": "Clipboard History: Open Panel",
-        "keywords": ["clipboard", "剪贴板", "history"]
+        "title": "剪贴板历史：打开面板",
+        "keywords": ["clipboard", "剪贴板", "剪贴板历史", "history"]
       }
     ],
     "services": [
