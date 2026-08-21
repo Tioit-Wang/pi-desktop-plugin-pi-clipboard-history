@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "pi.clipboard-history",
+  "name": "Clipboard History",
+  "version": "0.1.0",
+  "description": "Capture clipboard text while PI-Desktop runs, keep 30 days of history, restore any entry with one click.",
+  "author": "Tioit-Wang",
+  "main": "main.js",
+  "contributes": {
+    "views": [{ "id": "history", "title": { "en": "Clipboard History", "zh-CN": "剪贴板历史" }, "icon": "clock", "entry": "views/history.html", "order": 40 }],
+    "services": [{ "id": "watcher", "label": "Clipboard watcher", "autoRestart": true }]
+  },
+  "permissions": ["ui.view", "clipboard.read", "clipboard.write", "background.service"],
+  "engines": { "piDesktop": ">=0.8.0" },
+  "activationEvents": ["onStartup"]
+}
