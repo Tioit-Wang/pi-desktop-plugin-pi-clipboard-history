@@ -30,7 +30,8 @@ async function onLoad() {
     title: "Clipboard History: Open Panel",
     keywords: ["clipboard", "剪贴板", "history"],
     run: async () => {
-      await pi.ui.openPanel({ title: "Clipboard History" });
+      // No title option: the host resolves the localized manifest title.
+      await pi.ui.openPanel();
     },
   });
 }
