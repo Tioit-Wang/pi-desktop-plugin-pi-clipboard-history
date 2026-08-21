@@ -8,7 +8,7 @@
  * onLoad stay light; history files are loaded lazily on first request.
  *
  * Export shape: { onLoad, onUnload, onPanelInvoke }.
- * View RPC: window.pluginBridge.invoke(channel, payload) → onPanelInvoke.
+ * Panel RPC: window.pluginBridge.invoke(channel, payload) → onPanelInvoke.
  */
 
 const { CaptureService } = require("./lib/capture");
@@ -25,6 +25,14 @@ async function onLoad() {
     stop: () => service.stop(),
   });
   await registered;
+  await pi.commands.register({
+    id: "pi-clipboard-history.open",
+    title: "Clipboard History: Open Panel",
+    keywords: ["clipboard", "剪贴板", "history"],
+    run: async () => {
+      await pi.ui.openPanel({ title: "Clipboard History" });
+    },
+  });
 }
 
 async function onPanelInvoke(channel, payload) {
@@ -60,6 +68,11 @@ async function onUnload() {
   }
   try {
     await pi.services.unregister("watcher");
+  } catch {
+    /* best effort */
+  }
+  try {
+    await pi.commands.unregister("pi-clipboard-history.open");
   } catch {
     /* best effort */
   }

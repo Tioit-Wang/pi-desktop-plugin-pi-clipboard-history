@@ -81,12 +81,16 @@
       }
 
       /* ---------- toolbar ---------- */
+      /* Detached panel: keep the chrome band full-width (border + bg span the
+         window) but align its content to the centered 640px reading column so
+         title and controls line up with the list. Falls back to 10px on
+         narrow windows. */
       .toolbar {
         display: flex;
         flex: 0 0 auto;
         flex-direction: column;
         gap: 6px;
-        padding: 7px 10px 8px;
+        padding: 7px max(10px, calc((100% - 640px) / 2)) 8px;
         border-bottom: 1px solid var(--border);
         background: var(--bg);
       }
@@ -228,7 +232,7 @@
         flex: 0 0 auto;
         align-items: flex-start;
         gap: 7px;
-        padding: 6px 10px;
+        padding: 6px max(10px, calc((100% - 640px) / 2));
         border-bottom: 1px solid color-mix(in oklab, var(--warn) 26%, transparent);
         background: var(--warn-soft);
         color: var(--warn);
@@ -321,8 +325,12 @@
       #list::-webkit-scrollbar-thumb:hover {
         background: var(--faint);
       }
+      /* Day groups sit in a centered ~640px reading column inside the
+         full-width scroll container, so cards don't stretch awkwardly across
+         a wide panel while the scrollbar stays at the window edge. */
       .day {
-        margin-bottom: 2px;
+        max-width: 640px;
+        margin: 0 auto 2px;
       }
       .day-head {
         display: flex;
